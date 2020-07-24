@@ -45,11 +45,12 @@ driver.switch_to_frame(driver.find_elements_by_tag_name("iframe")[0])
 
 
 CheckBox = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID ,"recaptcha-anchor"))) 
-#wait_between(0.5, 0.7)  
-CheckBox.click() 
+ 
+CheckBox.click()
 
+input('press Enter when captcha is solved')
+
+driver.switch_to.default_content()
 
 driver.find_element_by_id("btnEnviar").click()
 
-
-#driver.quit()
